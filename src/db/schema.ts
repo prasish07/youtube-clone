@@ -10,12 +10,12 @@ export const users = pgTable(
   "users",
   {
     id: uuid("id").primaryKey().defaultRandom(),
-    clarkId: text("clark_id").unique().notNull(),
+    clerkId: text("clerk_id").unique().notNull(),
     name: text("name").notNull(),
     // TODO: add banner fields
     imageUrl: text("image_url").notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
   },
-  (t) => [uniqueIndex("clark_id_idx").on(t.clarkId)]
+  (t) => [uniqueIndex("clark_id_idx").on(t.clerkId)]
 );
